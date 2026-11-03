@@ -120,7 +120,7 @@ export default function ProgressPage() {
       </section>
 
       <div className="grid gap-10 lg:grid-cols-2">
-        <section>
+        <section className="min-w-0">
           <SectionTitle>{t.progress.byTopic}</SectionTitle>
           <ul className="divide-y divide-divider overflow-hidden rounded-2xl border border-border bg-surface">
             {byTopic.map(p => (
@@ -141,7 +141,7 @@ export default function ProgressPage() {
           <p className="mt-2 text-xs text-text-faint">{t.progress.footnote}</p>
         </section>
 
-        <section>
+        <section className="min-w-0">
           <SectionTitle>{t.progress.history}</SectionTitle>
           <ul className="divide-y divide-divider overflow-hidden rounded-2xl border border-border bg-surface">
             {attempts.slice(0, historyCount).map(a => (

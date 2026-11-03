@@ -84,15 +84,15 @@ export default function HomePage() {
       <section className="relative overflow-hidden rounded-3xl bg-hero p-6 text-on-hero sm:p-8">
         <div className="absolute inset-0 bg-[radial-gradient(70%_120%_at_100%_0%,rgba(126,223,178,0.18),transparent_60%)]" />
         <div className="relative flex items-center gap-4">
-          <Avatar user={user} className="size-14 border-2 border-white/40 bg-white/10 text-lg text-white" />
+          <Avatar user={user} className="size-12 shrink-0 border-2 border-white/40 bg-white/10 text-base text-white sm:size-14 sm:text-lg" />
           <div className="min-w-0 flex-1">
-            <h1 className="truncate font-display text-2xl font-extrabold sm:text-3xl">
+            <h1 className="line-clamp-2 break-words font-display text-xl font-extrabold leading-tight sm:truncate sm:text-3xl">
               {user?.firstName ? fmt(t.home.welcomeName, { name: user.firstName }) : t.home.welcome}
             </h1>
-            {academic ? <p className="mt-0.5 truncate text-sm font-medium text-accent sm:text-base">{academic}</p> : null}
+            {academic ? <p className="mt-1 line-clamp-2 text-sm font-medium text-accent sm:truncate sm:text-base">{academic}</p> : null}
           </div>
           <div
-            className="flex items-center gap-1.5 rounded-2xl border border-hero-control-border bg-hero-control px-3.5 py-2 font-display text-lg font-extrabold"
+            className="flex shrink-0 items-center gap-1.5 self-start rounded-2xl border border-hero-control-border bg-hero-control px-3 py-2 font-display text-lg font-extrabold sm:self-auto sm:px-3.5"
             aria-label={plural(summary.streakDays, t.home.streakA11y)}
             title={plural(summary.streakDays, t.home.streakA11y)}>
             <Flame className="size-5 text-orange-400" /> {summary.streakDays}

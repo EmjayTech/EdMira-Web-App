@@ -251,7 +251,7 @@ export function RegistrationForm() {
               onChange={e => set('email', e.target.value)}
               error={err('email')}
             />
-            <div className="grid grid-cols-[minmax(0,0.9fr)_minmax(0,2fr)] gap-3">
+            <div className="grid grid-cols-[8.5rem_minmax(0,1fr)] gap-3 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,2fr)]">
               <SelectField
                 label={t.registration.selectCountry}
                 placeholder={t.registration.selectCountry}

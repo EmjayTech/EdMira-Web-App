@@ -47,7 +47,7 @@ export default function CourseDetailPage() {
         className="relative overflow-hidden rounded-3xl p-6 text-white sm:p-8"
         style={{ background: `linear-gradient(135deg, ${course.color} 0%, ${course.color} 45%, #0a1a44 100%)` }}>
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-          <div className="rounded-3xl ring-4 ring-white/20">
+          <div className="self-start rounded-3xl ring-4 ring-white/20 sm:self-auto">
             <CourseBadge code={course.code} color={lighten(course.color, 0.15)} size="lg" />
           </div>
           <div className="min-w-0 flex-1">
@@ -69,7 +69,7 @@ export default function CourseDetailPage() {
       </header>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-        <section>
+        <section className="min-w-0">
           <SectionTitle>{t.courseDetail.topics}</SectionTitle>
           <ol className="flex flex-col gap-3">
             {course.topics.map(topic => {
@@ -112,7 +112,7 @@ export default function CourseDetailPage() {
         </section>
 
         {materials.length ? (
-          <section>
+          <section className="min-w-0">
             <SectionTitle>{t.materials.title}</SectionTitle>
             <MaterialsList resources={materials} topicTitles={topicTitles} />
           </section>
